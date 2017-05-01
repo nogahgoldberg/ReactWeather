@@ -13,13 +13,11 @@ module.exports = {
     // Making a promise when getting output from url
     return axios.get(requestUrl).then(function (res) {
       if (res.data.cod && res.data.message){
-        debugger;
         throw new Error(res.data.message);
       } else {
         return res.data.main.temp;
       }
     }, function (res) {
-        debugger;
         throw new Error(res.data.message);
     });
   }
