@@ -12,7 +12,7 @@ var Weather = React.createClass({
   handleSearch: function (location) {
 
     // Ins/Outs in JSX the this bindings gets lost in the API scope, so we save it before hand
-    var that = this;    
+    var that = this;
 
     this.setState({isLoading: true});
 
@@ -35,7 +35,7 @@ var Weather = React.createClass({
 
     function renderMessage(){
       if (isLoading) { // loading data
-        return <h3>Fetching Weather...</h3>;
+        return <h3 className="text-center">Fetching Weather...</h3>;
       } else if (temp && location) { // valid temp and location
         return <WeatherMessage temp={temp} location={location}/>
       }
@@ -43,7 +43,7 @@ var Weather = React.createClass({
 
     return(
       <div>
-        <h3>Weather Component</h3>
+        <h1 className="text-center">Get Weather</h1>
         <WeatherForm onSearch={this.handleSearch}/>
         {renderMessage()}
       </div>
